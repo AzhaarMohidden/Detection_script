@@ -1,5 +1,5 @@
 import cv2
-def drawHex(x, y, size, B, G, R, line_thick, img):
+def drawHex(x, y, size, B, G, R, line_thick, img, text):
         #scale dependes on the angle of slant of the line and is the inverse tangent of the angle
         l_scale = int(size/1.73)
         size_s = size - (size/2)
@@ -21,4 +21,4 @@ def drawHex(x, y, size, B, G, R, line_thick, img):
         cv2.line(img,(x,y),(x+ls_scale,y-size + size_s),(B,G,R),line_thick)
         cv2.line(img,(x+ls_scale,y-size + size_s),(x+size*2,y-size + size_s),(B,G,R),line_thick)
 #text
-        cv2.putText(img,'sample text',(xf,yf), font, fontScale, (B,G,R), line_thick, cv2.LINE_AA)
+        cv2.putText(img,str(text),(xf,yf), font, fontScale, (B,G,R), line_thick, cv2.LINE_AA)

@@ -13,6 +13,10 @@ cap = cv2.VideoCapture("rtsp://admin:cltadmin12@192.168.1.108:554/cam/realmonito
 
 B = 150; G = 200; R = 0
 text = "Person"
+n=1
+def img_write_sample():
+    cv2.imwrite('pos_img/'+ str(n) +'.jpg',roi_color)
+
 while 1:
     ret, img = cap.read()
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -22,6 +26,8 @@ while 1:
         #cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = img[y:y+h, x:x+w]
+        img_write_sample()
+        n=n+1
     cv2.imshow('img',img)
     k = cv2.waitKey(30) & 0xff
     if k == 27:
