@@ -8,7 +8,7 @@ from drwhx import cv_draw_hex as drw
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 #https://github.com/Itseez/opencv/blob/master/data/haarcascades/haarcascade_eye.xml
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
-
+#cap = cv2.VideoCapture(0)
 cap = cv2.VideoCapture("rtsp://admin:cltadmin12@192.168.1.108:554/cam/realmonitor?channel=1&subtype=1")
 
 B = 150; G = 200; R = 0
